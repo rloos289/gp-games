@@ -32,3 +32,18 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+$databases['default']['default'] = array (
+  'database' => 'drupal9',
+  'username' => 'drupal9',
+  'password' => 'drupal9',
+  'prefix' => '',
+  'host' => 'database',
+  'port' => '3306',
+  'isolation_level' => 'READ COMMITTED',
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+$settings['hash_salt'] = 'n2poBzyIBB-Dh_8QqZI3Lak4159yFw3uWxDcGqisZ9ik9Ptg-O-OoI68ngaYUpOsy4qphPmB_w';
+
+$settings['config_sync_directory'] = '../config/default';

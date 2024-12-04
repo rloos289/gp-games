@@ -1,0 +1,33 @@
+name: gp-games
+recipe: drupal9
+config:
+  framework: drupal-9
+  site: gp-games
+  id: 432310fb-35f1-404d-8bea-67a49ed8d82c
+  webroot: ./web
+  php: '8.2'
+  database: mariadb
+  via: nginx
+  # Disable the VARNISH edge
+  edge: false
+  # Disable the REDIS cache
+  cache: false
+  # Set to true and run `lando rebuild` to enable xdebug
+  xdebug: debug
+  config:
+    php: lando/php.ini
+tooling:
+  drush:
+    service: appserver
+    env:
+      DRUSH_OPTIONS_URI: "https://wslcb-d10.lndo.site"
+  xdebug-on:
+    service: appserver
+    description: 'Enable xdebug for nginx.'
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: 'Disable xdebug for nginx.'
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Disabling xdebug"
+    user: root
