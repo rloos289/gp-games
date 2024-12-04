@@ -1,6 +1,9 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  admin_toolbar: 0
+  admin_toolbar_search: 0
+  admin_toolbar_tools: 0
   announcements_feed: 0
   automated_cron: 0
   big_pipe: 0
@@ -8,9 +11,12 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
-  comment: 0
+  ckeditor5_plugin_pack: 0
+  ckeditor5_plugin_pack_find_and_replace: 0
+  ckeditor5_plugin_pack_highlight: 0
+  ckeditor5_plugin_pack_indent_block: 0
+  ckeditor5_plugin_pack_link_attributes: 0
   config: 0
-  contact: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -24,6 +30,8 @@ module:
   history: 0
   image: 0
   link: 0
+  media: 0
+  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -40,6 +48,8 @@ module:
   toolbar: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   views: 10
   standard: 1000
 theme:
